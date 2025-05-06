@@ -1,4 +1,4 @@
-# Hoshi
+# hoshi
 
 ## What even is ray-tracing?
 
@@ -13,3 +13,5 @@ According to Wikipedia:
 So in simpler terms, it makes images.
 
 ## The PPM format
+
+## The vec3 struct

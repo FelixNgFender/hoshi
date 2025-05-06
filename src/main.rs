@@ -1,5 +1,10 @@
 use std::io::{Write, stderr, stdout};
 
+use color::Color;
+mod color;
+mod point3;
+mod vec3;
+
 fn main() {
     let image_width: u32 = 256;
     let image_height: u32 = 256;
@@ -17,20 +22,12 @@ fn main() {
             // red goes from 0 -> 1 left right
             // green goes from 0 -> 1 top down
             // blue 0
-            let r = i as f32 / (image_width - 1) as f32;
-            let g = j as f32 / (image_height - 1) as f32;
+            let r = i as f64 / (image_width - 1) as f64;
+            let g = j as f64 / (image_height - 1) as f64;
             let b = 0.0;
-
-            // [0, 1] is only internal representation
-            // have to scale to [0, 255] before outputting
-            // use 255.999 to approximate: values near to 1
-            // map to 255 due to truncation and 1 still map
-            // to 255.
-            let ir = (r * 255.999) as u32;
-            let ig = (g * 255.999) as u32;
-            let ib = (b * 255.999) as u32;
-
-            writeln!(lock, "{ir} {ig} {ib}").unwrap();
+            let pixel_color = Color::new(r, g, b);
+            let (r, g, b) = pixel_color.to_rgb_bytes();
+            writeln!(lock, "{} {} {}", r, g, b).unwrap();
         }
     }
 
