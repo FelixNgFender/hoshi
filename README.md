@@ -15,3 +15,5 @@ So in simpler terms, it makes images.
 ## The PPM format
 
 ## The vec3 struct
+
+## Rays, camera, and background

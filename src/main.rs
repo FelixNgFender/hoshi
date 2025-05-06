@@ -1,9 +1,11 @@
+mod color;
+mod point3;
+mod ray;
+mod vector3;
+
 use std::io::{Write, stderr, stdout};
 
 use color::Color;
-mod color;
-mod point3;
-mod vec3;
 
 fn main() {
     let image_width: u32 = 256;

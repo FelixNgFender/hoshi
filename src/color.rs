@@ -1,6 +1,6 @@
-use crate::vec3;
+use crate::vector3;
 
-pub type Color = vec3::Vector3;
+pub type Color = vector3::Vector3;
 
 impl Color {
     pub fn to_rgb_bytes(&self) -> (u8, u8, u8) {
