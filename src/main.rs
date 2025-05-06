@@ -22,7 +22,7 @@ fn main() {
     let viewport_height = 2.0;
     // aspect_ratio is the ideal ratio. for viewport proportions to exactly match the integer-based
     // image proportions, scale to actual image proportions
-    let viewport_width = viewport_height * (image_height as f64 / image_width as f64);
+    let viewport_width = viewport_height * (image_width as f64 / image_height as f64);
     let camera_center = Point3::new(0.0, 0.0, 0.0);
 
     // span the viewport dimensions
